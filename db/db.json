@@ -16,6 +16,10 @@
       {
         "id": 4,
         "tipo": "Integral"
+      },
+      {
+        "id": 5,
+        "tipo": "Pão franês"
       }
     ],
     "carnes": [
@@ -34,6 +38,10 @@
       {
         "id": 4,
         "tipo": "Veggie burger"
+      },
+      {
+        "id": 5,
+        "tipo": "Dupla carne"
       }
     ],
     "opcionais": [
@@ -54,12 +62,20 @@
         "tipo": "Tomate"
       },
       {
-        "id": 4,
+        "id": 5,
         "tipo": "Cebola roxa"
       },
       {
-        "id": 4,
-        "tipo": "Pepino"
+        "id": 6,
+        "tipo": "Ovo"
+      }, 
+      {
+        "id": 7,
+        "tipo": "Queijo"
+      },
+      {
+        "id": 8,
+        "tipo": "Presunto"
       }
     ]
   },
@@ -77,5 +93,17 @@
       "tipo": "Finalizado"
     }
   ],
-  "burgers": []
+  "burgers": [
+    {
+      "nome": "Felipe",
+      "carne": "Alcatra",
+      "pao": "Italiano Branco",
+      "opcionais": [
+        "Bacon",
+        "Pepino"
+      ],
+      "status": "Solicitado",
+      "id": 1
+    }
+  ]
 }

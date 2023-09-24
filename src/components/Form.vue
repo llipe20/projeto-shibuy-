@@ -14,7 +14,7 @@
                 <div class="box-input">
                     <label for="pao">Escolha o pão: </label>
                     <select name="pao" id="pao" v-model="pao">
-                        <option value="">Selecione o pão</option>
+                        <option value="null">Selecione o pão</option>
                         <option v-for="pao in paes" :key="pao.id" :value="pao.tipo">{{ pao.tipo }}</option>
                     </select>
                 </div>
@@ -23,7 +23,7 @@
                 <div class="box-input">
                     <label for="carne">Escolha a carne: </label>
                     <select name="carne" id="carne" v-model="carne">
-                        <option value="">Selecione a carne</option>
+                        <option value="null">Selecione a carne</option>
                         <option v-for="carne in carnes" :key="carne.id" :value="carne.tipo">{{ carne.tipo }}</option>
                     </select>
                 </div>
