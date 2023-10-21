@@ -47,7 +47,7 @@
     "opcionais": [
       {
         "id": 1,
-        "tipo": "Bacon"
+        "tipo": "Baicon"
       },
       {
         "id": 2,
@@ -68,7 +68,7 @@
       {
         "id": 6,
         "tipo": "Ovo"
-      }, 
+      },
       {
         "id": 7,
         "tipo": "Queijo"
@@ -97,13 +97,41 @@
     {
       "nome": "Felipe",
       "carne": "Alcatra",
-      "pao": "Italiano Branco",
+      "pao": "3 Queijos",
       "opcionais": [
-        "Bacon",
-        "Pepino"
+        "Baicon"
       ],
       "status": "Solicitado",
       "id": 1
+    },
+    {
+      "nome": "Nara",
+      "carne": "Veggie burger",
+      "pao": "Italiano Branco",
+      "opcionais": [
+        "Cheddar",
+        "Queijo",
+        "Salame"
+      ],
+      "status": "Solicitado",
+      "id": 2
+    },
+    {
+      "nome": "Mahoraga",
+      "carne": "Picanha",
+      "pao": "Pão franês",
+      "opcionais": [
+        "Presunto",
+        "Cebola roxa",
+        "Salame",
+        "Baicon",
+        "Tomate",
+        "Queijo",
+        "Cheddar",
+        "Ovo"
+      ],
+      "status": "Solicitado",
+      "id": 3
     }
   ]
 }

@@ -110,10 +110,10 @@ export default {
             this.msg = 'Pedido realizado com sucesso!'
 
             // Passo 4: Limpar os campos
-            this.nome = '',
-            this.pao = '',
-            this.carne = '',
-            this.opcionais = ''
+            this.nome = null,
+            this.pao = null,
+            this.carne = null,
+            this.opcionais = null
             setTimeout(() => this.msg = null, 2000)
         }
     },

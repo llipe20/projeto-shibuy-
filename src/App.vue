@@ -37,6 +37,12 @@ html::-webkit-scrollbar {
     display: none;
 }
 
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .box-main {
   padding: 50px;
   height: auto;
