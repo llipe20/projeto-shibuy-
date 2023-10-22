@@ -1,5 +1,7 @@
 <template>
   <div class="flex container">
+    <Modal :msg="msg" v-show="msg"/>
+
     <table class="table">
         <tr class="header">
             <th>#</th>
@@ -21,15 +23,11 @@
                 </span>
             </td>
             <td>
-                <select
-                name="status"
-                :id="'status_' + pedido.id"
-                v-model="pedido.status"
-                @input="Modiify(pedido.id)"
-                >
-                <option value="Solicitado">Selecione o status</option>
-                <option value="Em andamento">Em produção</option>
-                <option value="Finalizado">Finalizado</option>
+                <select name="status" id="status" @change="Update($event,pedido.id)">
+                    <option value=""> Selecione </option>
+                    <option v-for="statu in status" :key="statu.id" :value="statu.tipo" :selected="pedido.status == statu.tipo">
+                        {{ statu.tipo }}
+                    </option>
                 </select>
                 <button class="btn" @click="Excluir(pedido.id)">Cancelar</button>
             </td>
@@ -39,13 +37,19 @@
 </template>
 
 <script>
+import Modal from './Modal.vue'
 export default {
     name : 'Dashboard',
+
+    components : {
+        Modal
+    },
 
     data() {
         return {
             pedidos : null,
-            status: null
+            status: null,
+            msg : null
         }
     },
 
@@ -56,22 +60,53 @@ export default {
             this.pedidos = data
         },
 
-        Excluir(pedido) {
-            console.log(pedido)
+        async getStatus() {
+            const req = await fetch('http://localhost:3000/status')
+            const data = await req.json()
+            this.status = data
         },
 
-        Modify(pedido) {
-            console.log(pedido)
+        async Excluir(pedido) {
+            const req = await fetch(`http://localhost:3000/burgers/${pedido}`, {
+                method : "DELETE"
+            })
+            const res = await req.json()
+            console.log(res)
+
+            this.getPedidos()
+        },
+
+        async Update(e,pedido) {
+           const  option = await e.target.value
+           const dataJson = JSON.stringify({ status : option })
+           const req = await fetch(`http://localhost:3000/burgers/${pedido}`, {
+                method : "PATCH",
+                headers : { "Content-Type" : "application/json"},
+                body : dataJson
+           })
+           const res = await req.json()
+           console.log(res)
+
+           this.msg = "Status atualizado!"
+           setInterval(() => {
+                this.msg = null
+           }, 2000)
         }
     },
 
     created() {
         this.getPedidos()
+        this.getStatus()
     }
 }
 </script>
 
 <style scoped>
+
+    .container {
+        flex-direction: column;
+    }
+
     .table {
         background-color: rgb(246, 246, 246);
         border-collapse: collapse;

@@ -96,42 +96,13 @@
   "burgers": [
     {
       "nome": "Felipe",
-      "carne": "Alcatra",
-      "pao": "3 Queijos",
-      "opcionais": [
-        "Baicon"
-      ],
-      "status": "Solicitado",
-      "id": 1
-    },
-    {
-      "nome": "Nara",
       "carne": "Veggie burger",
       "pao": "Italiano Branco",
       "opcionais": [
-        "Cheddar",
-        "Queijo",
-        "Salame"
+        "Baicon"
       ],
-      "status": "Solicitado",
-      "id": 2
-    },
-    {
-      "nome": "Mahoraga",
-      "carne": "Picanha",
-      "pao": "Pão franês",
-      "opcionais": [
-        "Presunto",
-        "Cebola roxa",
-        "Salame",
-        "Baicon",
-        "Tomate",
-        "Queijo",
-        "Cheddar",
-        "Ovo"
-      ],
-      "status": "Solicitado",
-      "id": 3
+      "status": "Em produção",
+      "id": 1
     }
   ]
 }
